@@ -15,7 +15,7 @@ Transforms the output of the Multisite Language Switcher to an HTML select
 
 Most people are likely to use some lines of PHP or the widget provided by the [Multisite Language Switcher](http://wordpress.org/plugins/multisite-language-switcher/) to integrate the links to the translations in their blogs.
 
-If you look for an easy way to change the output of the **Multisite Language Switcher** as an HTML select with some JavaScript that forwards the visitor automatically after selecting an option then give **MslsSelect** a try.
+But if you look for an **easy way** to change the output of the _Multisite Language Switcher_ as an HTML select with some JavaScript that forwards the visitor automatically after selecting an option then give **MslsSelect** a try.
 
 == Installation ==
 
