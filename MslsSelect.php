@@ -63,7 +63,7 @@ class MslsSelect {
 		return array(
 			'before_item'   => '',
 			'after_item'    => '',
-			'before_output' => '<select id="msls_languages">',
+			'before_output' => '<select class="msls_languages">',
 			'after_output'  => '</select>',
 		);
 	}
