@@ -59,8 +59,8 @@ class MslsSelect {
 		);
 	}
 
-	public function output_get( $tags ) {
-			$tags = array(
+	public function get_tags( $tags ) {
+		return array(
 			'before_item'   => '',
 			'after_item'    => '',
 			'before_output' => '<select id="msls_languages">',
