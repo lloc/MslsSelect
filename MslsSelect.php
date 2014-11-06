@@ -45,7 +45,7 @@ class MslsSelect {
 			'mslsselect',
 			plugins_url( '/js/mslsselect.js' , __FILE__ ),
 			array( 'jquery' ),
-			'0.1',
+			self::VERSION,
 			true
 		);
 	}
