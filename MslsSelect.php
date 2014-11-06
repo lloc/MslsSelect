@@ -55,7 +55,7 @@ class MslsSelect {
 			'<option value="%s"%s>%s</option>',
 			$url,
 			( $current ? ' selected="selected"' : '' ),
-			$link
+			$link->txt
 		);
 	}
 
