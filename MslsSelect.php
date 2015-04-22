@@ -35,12 +35,20 @@ class MslsSelect {
 	const VERSION = '1.0';
 
 	/**
-	 * Adds filters and actions on object instantiation
+	 * Factory
+	 *
+	 * @return MslsSelect
 	 */
-	public function __construct() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_filter( 'msls_output_get_tags', array( $this, 'get_tags' ) );
-		add_filter( 'msls_output_get', array( $this, 'output_get' ), 10, 3 );
+	public static function init() {
+		$obj = new self();
+
+		if ( ! is_admin() ) {
+			add_action( 'wp_enqueue_scripts', array( $obj, 'enqueue_scripts' ) );
+			add_filter( 'msls_output_get_tags', array( $obj, 'get_tags' ) );
+			add_filter( 'msls_output_get', array( $obj, 'output_get' ), 10, 3 );
+		}
+
+		return $obj;
 	}
 
 	/**
@@ -67,7 +75,7 @@ class MslsSelect {
 	 */
 	public function output_get( $url, $link, $current ) {
 		return sprintf(
-			'<option value="%s"%s>%s</option>',
+			'<option value="%s" %s>%s</option>',
 			$url,
 			( $current ? ' selected="selected"' : '' ),
 			$link->txt
@@ -94,4 +102,6 @@ class MslsSelect {
 
 }
 
-$mslsselect = new MslsSelect();
+add_action( 'plugins_loaded', function () {
+	MslsSelect::init();
+} );
