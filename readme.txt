@@ -4,7 +4,7 @@ Contributors: realloc
 Donate link: http://www.greenpeace.org/international/
 Tags: multilingual, multisite, language, switcher, international, localization, i18n, menu, select-box, html select
 Requires at least: 3.6.1
-Tested up to: 4.4
+Tested up to: 4.6
 Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,6 +24,9 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 * Activate the plugin and see the magic ;)
 
 == Changelog ==
+
+= 1.2 =
+* include output_current_blog right after activation
 
 = 1.1 =
 * fix backwards compatibility
