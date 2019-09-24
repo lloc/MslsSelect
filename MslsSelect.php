@@ -87,12 +87,12 @@ class MslsSelect {
 	 * @return array
 	 */
 	public function get_tags() {
-		return array(
+		return [
 			'before_item'   => '',
 			'after_item'    => '',
 			'before_output' => '<select class="msls_languages">',
 			'after_output'  => '</select>',
-		);
+		];
 	}
 
 }
