@@ -4,8 +4,8 @@ Contributors: realloc
 Donate link: http://www.greenpeace.org/international/
 Tags: multilingual, multisite, language, switcher, international, localization, i18n, menu, select-box, html select
 Requires at least: 3.6.1
-Tested up to: 4.6
-Stable tag: 1.4
+Tested up to: 5.2
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,8 +25,11 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 
 == Changelog ==
 
-= 1.4 =
+= 2.1 =
 * jQuery dependency removed and JS reviewed
+
+= 2.0 =
+* compatibility with MSLS 2.0
 
 = 1.3 =
 * plugin inits when plugins_loaded runs and adds callback to hooks in its factory now
