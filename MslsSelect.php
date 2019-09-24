@@ -63,7 +63,7 @@ class MslsSelect {
 	 * Enqueue scripts action
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( 'mslsselect', plugins_url( '/js/mslsselect.js', __FILE__ ), [], self::VERSION, true );
+		wp_enqueue_script( 'mslsselect', plugins_url( '/js/mslsselect.min.js', __FILE__ ), [], self::VERSION, true );
 	}
 
 	/**
