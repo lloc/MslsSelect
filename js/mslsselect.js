@@ -1,9 +1,11 @@
-jQuery(document).ready(function ($) {
-    $('select.msls_languages').bind('change', function () {
-        var url = $(this).val();
-        if (url) {
-            window.location = url;
+(function() {
+    const selectors = document.querySelectorAll('select.msls_languages')
+    const process = function(e) {
+        if (e.target.value) {
+            window.location = e.target.value
         }
-        return false;
-    });
-});
+    }
+    for (let i = 0; i < selectors.length; i++) {
+        selectors[i].addEventListener('change', process)
+    }
+})();
