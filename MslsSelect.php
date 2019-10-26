@@ -50,19 +50,19 @@ class MslsSelect {
 	 * @return MslsSelect
 	 */
 	public static function init() {
-		$obj = new self;
-
 		if ( ! is_admin() ) {
-			add_action( 'wp_enqueue_scripts', [ $obj, 'enqueue_scripts' ] );
-			add_filter( 'msls_output_get_tags', [ $obj, 'get_tags' ] );
-			add_filter( 'msls_output_get', [ $obj, 'output_get' ], 10, 3 );
+			add_action( 'wp_enqueue_scripts', [ MslsSelect::class, 'enqueue_scripts' ] );
+			add_filter( 'msls_output_get_tags', [ MslsSelect::class, 'get_tags' ] );
+			add_filter( 'msls_output_get', [ MslsSelect::class, 'output_get' ], 10, 3 );
 		}
 
-		return $obj;
+		return new self;
 	}
 
 	/**
 	 * Enqueue scripts action
+	 *
+	 * @codeCoverageIgnore
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'mslsselect', plugins_url( '/js/mslsselect.min.js', __FILE__ ), [], self::VERSION, true );
@@ -97,6 +97,10 @@ class MslsSelect {
 
 }
 
-add_action( 'plugins_loaded', function () {
-	MslsSelect::init();
-} );
+// @codeCoverageIgnoreStart
+if ( function_exists( 'add_action' ) ) {
+	add_action( 'plugins_loaded', function () {
+		MslsSelect::init();
+	} );
+}
+// @codeCoverageIgnoreEnd
