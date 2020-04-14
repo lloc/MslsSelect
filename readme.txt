@@ -26,6 +26,11 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 
 == Changelog ==
 
+= 2.2 =
+* full test coverage
+* WordPress 5.4 tested
+* PHP 7.1 as minimum declared
+
 = 2.1 =
 * jQuery dependency removed and JS reviewed
 
