@@ -4,7 +4,7 @@
 Plugin Name: MslsSelect
 Plugin URI: https://github.com/lloc/MslsSelect
 Description: Transforms the output of the Multisite Language Switcher to an HTML select
-Version: 2.1
+Version: 2.2
 Author: Dennis Ploetner
 Author URI: http://lloc.de/
 */
@@ -28,11 +28,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 /**
  * MslsSelect Class
+ *
  * @package mslsselect
  */
 class MslsSelect {
 
-	const VERSION = '2.1';
+	const VERSION = '2.2';
 
 	public function __construct() {
 		$options = get_option( 'msls' );
@@ -49,7 +50,7 @@ class MslsSelect {
 	 *
 	 * @return MslsSelect
 	 */
-	public static function init() {
+	public static function init(): self {
 		if ( ! is_admin() ) {
 			add_action( 'wp_enqueue_scripts', [ MslsSelect::class, 'enqueue_scripts' ] );
 			add_filter( 'msls_output_get_tags', [ MslsSelect::class, 'get_tags' ] );
@@ -64,7 +65,7 @@ class MslsSelect {
 	 *
 	 * @codeCoverageIgnore
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts(): void {
 		wp_enqueue_script( 'mslsselect', plugins_url( '/js/mslsselect.min.js', __FILE__ ), [], self::VERSION, true );
 	}
 
@@ -72,12 +73,12 @@ class MslsSelect {
 	 * Filter for the 'msls_output_get'-hook
 	 *
 	 * @param string $url
-	 * @param StdClass $link
+	 * @param object $link
 	 * @param bool $current
 	 *
 	 * @return string
 	 */
-	public function output_get( $url, $link, $current ) {
+	public function output_get( string $url, $link, bool $current ): string {
 		return sprintf( '<option value="%s"%s>%s</option>', $url, ( $current ? ' selected="selected"' : '' ), $link->txt );
 	}
 
@@ -86,7 +87,7 @@ class MslsSelect {
 	 *
 	 * @return array
 	 */
-	public function get_tags() {
+	public function get_tags(): array {
 		return [
 			'before_item'   => '',
 			'after_item'    => '',

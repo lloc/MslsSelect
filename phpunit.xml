@@ -1,0 +1,12 @@
+<phpunit>
+    <testsuites>
+        <testsuite name="wccta">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <file>MslsSelect.php</file>
+        </whitelist>
+    </filter>
+</phpunit>
