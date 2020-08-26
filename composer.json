@@ -1,5 +1,5 @@
 {
-  "name": "lloc/MslsSelect",
+  "name": "lloc/msls-select",
   "description": "Transforms the output of the Multisite Language Switcher to an HTML select",
   "type": "wordpress-plugin",
   "autoload-dev": {
