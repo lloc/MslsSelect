@@ -25,9 +25,9 @@ class MslsSelectTest extends TestCase {
 
 		$this->assertInstanceOf( MslsSelect::class, MslsSelect::init() );
 
-		$this->assertFalse( has_action('wp_enqueue_scripts', [ MslsSelect::class, 'enqueue_scripts' ] ) );
-		$this->assertFalse( has_filter('msls_output_get_tags', [ MslsSelect::class, 'get_tags' ] ) );
-		$this->assertFalse( has_filter('msls_output_get', [ MslsSelect::class, 'output_get' ] ) );
+		$this->assertFalse( has_action( 'wp_enqueue_scripts', [ MslsSelect::class, 'enqueue_scripts' ] ) );
+		$this->assertFalse( has_filter( 'msls_output_get_tags', [ MslsSelect::class, 'get_tags' ] ) );
+		$this->assertFalse( has_filter( 'msls_output_get', [ MslsSelect::class, 'output_get' ] ) );
 	}
 
 	public function test_init_admin_false() {
@@ -36,9 +36,9 @@ class MslsSelectTest extends TestCase {
 
 		$this->assertInstanceOf( MslsSelect::class, MslsSelect::init() );
 
-		$this->assertTrue( has_action('wp_enqueue_scripts', [ MslsSelect::class, 'enqueue_scripts' ] ) );
-		$this->assertTrue( has_filter('msls_output_get_tags', [ MslsSelect::class, 'get_tags' ] ) );
-		$this->assertTrue( has_filter('msls_output_get', [ MslsSelect::class, 'output_get' ] ) );
+		$this->assertSame( 10, has_action( 'wp_enqueue_scripts', [ MslsSelect::class, 'enqueue_scripts' ] ) );
+		$this->assertSame( 10, has_filter( 'msls_output_get_tags', [ MslsSelect::class, 'get_tags' ] ) );
+		$this->assertSame( 10, has_filter( 'msls_output_get', [ MslsSelect::class, 'output_get' ] ) );
 	}
 
 	public function test_output_get_true() {
