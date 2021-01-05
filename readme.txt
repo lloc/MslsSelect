@@ -4,9 +4,9 @@ Contributors: realloc
 Donate link: http://www.greenpeace.org/international/
 Tags: multilingual, multisite, language, switcher, international, localization, i18n, menu, select-box, html select
 Requires at least: 3.6.1
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 7.1
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,8 +26,11 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 
 == Changelog ==
 
+= 2.2.3 =
+* strict types and PHPStan tested
+
 = 2.2.2 =
-= WordPress 5.6 tested
+* WordPress 5.6 tested
 
 = 2.2.1 =
 * WordPress 5.5 tested
