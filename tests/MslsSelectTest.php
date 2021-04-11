@@ -6,17 +6,29 @@ use PHPUnit\Framework\TestCase;
 
 class MslsSelectTest extends TestCase {
 
-	public function get_test() {
-		Functions\expect( 'get_option' )->once()->andReturn( [] );
-		Functions\expect( 'update_option' )->once();
+	protected function setUp(): void {
+		parent::setUp();
+		Monkey\setUp();
+	}
 
-		return new MslsSelect();
+	public function test_enqueue_scripts() {
+		Functions\expect( 'wp_enqueue_script' )->once();
+		Functions\expect( 'plugins_url' )->once()->andReturn( 'an_url' );
+
+		MslsSelect::enqueue_scripts();
+
+		$this->expectOutputString( '' );
 	}
 
 	public function test_get_tags() {
-		$test = $this->get_test();
+		$expected = [
+			'before_item'   => '',
+			'after_item'    => '',
+			'before_output' => '<select class="msls_languages">',
+			'after_output'  => '</select>',
+		];
 
-		$this->assertNotEmpty( $test->get_tags() );
+		$this->assertEquals( $expected, MslsSelect::get_tags() );
 	}
 
 	public function test_init_admin_true() {
@@ -42,30 +54,28 @@ class MslsSelectTest extends TestCase {
 	}
 
 	public function test_output_get_true() {
-		$test = $this->get_test();
-
 		$url  = '/test/';
 		$link = (object) [ 'txt' => 'Test' ];
 
 		$expected = '<option value="/test/" selected="selected">Test</option>';
 
-		$this->assertEquals( $expected, $test->output_get( $url, $link, true ) );
+		$this->assertEquals( $expected, MslsSelect::output_get( $url, $link, true ) );
 	}
 
 	public function test_output_get_false() {
-		$test = $this->get_test();
-
 		$url  = '/test/';
 		$link = (object) [ 'txt' => 'Test' ];
 
 		$expected = '<option value="/test/">Test</option>';
 
-		$this->assertEquals( $expected, $test->output_get( $url, $link, false ) );
+		$this->assertEquals( $expected, MslsSelect::output_get( $url, $link, false ) );
 	}
 
-	protected function setUp(): void {
-		parent::setUp();
-		Monkey\setUp();
+	public function test_update_option_in_constructor() {
+		Functions\expect( 'get_option' )->once()->andReturn( [] );
+		Functions\expect( 'update_option' )->once()->andReturn( true );
+
+		$this->assertIsObject( ( new MslsSelect() ) );
 	}
 
 	protected function tearDown(): void {

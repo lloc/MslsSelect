@@ -4,7 +4,7 @@
 Plugin Name: MslsSelect
 Plugin URI: https://github.com/lloc/MslsSelect
 Description: Transforms the output of the Multisite Language Switcher to an HTML select
-Version: 2.2.3
+Version: 2.2.4
 Author: Dennis Ploetner
 Author URI: http://lloc.de/
 */
@@ -35,7 +35,7 @@ declare( strict_types=1 );
  */
 class MslsSelect {
 
-	const VERSION = '2.2.3';
+	const VERSION = '2.2.4';
 
 	public function __construct() {
 		$options = get_option( 'msls' );
@@ -64,10 +64,8 @@ class MslsSelect {
 
 	/**
 	 * Enqueue scripts action
-	 *
-	 * @codeCoverageIgnore
 	 */
-	public function enqueue_scripts(): void {
+	public static function enqueue_scripts(): void {
 		wp_enqueue_script( 'mslsselect', plugins_url( '/js/mslsselect.min.js', __FILE__ ), [], self::VERSION, true );
 	}
 
@@ -80,7 +78,7 @@ class MslsSelect {
 	 *
 	 * @return string
 	 */
-	public function output_get( string $url, $link, bool $current ): string {
+	public static function output_get( string $url, $link, bool $current ): string {
 		return sprintf( '<option value="%s"%s>%s</option>', $url, ( $current ? ' selected="selected"' : '' ), $link->txt );
 	}
 
@@ -89,7 +87,7 @@ class MslsSelect {
 	 *
 	 * @return array
 	 */
-	public function get_tags(): array {
+	public static function get_tags(): array {
 		return [
 			'before_item'   => '',
 			'after_item'    => '',
