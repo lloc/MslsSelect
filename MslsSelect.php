@@ -54,9 +54,9 @@ class MslsSelect {
 	 */
 	public static function init(): self {
 		if ( ! is_admin() ) {
-			add_action( 'wp_enqueue_scripts', [ MslsSelect::class, 'enqueue_scripts' ] );
-			add_filter( 'msls_output_get_tags', [ MslsSelect::class, 'get_tags' ] );
-			add_filter( 'msls_output_get', [ MslsSelect::class, 'output_get' ], 10, 3 );
+			add_action( 'wp_enqueue_scripts', [ __CLASS__, 'enqueue_scripts' ] );
+			add_filter( 'msls_output_get_tags', [ __CLASS__, 'get_tags' ] );
+			add_filter( 'msls_output_get', [ __CLASS__, 'output_get' ], 10, 3 );
 		}
 
 		return new self;
