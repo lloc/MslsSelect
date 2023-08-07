@@ -21,9 +21,9 @@
     "phpstan/extension-installer": "^1.1"
   },
   "scripts": {
-    "test": "./vendor/bin/phpunit",
-    "coverage": "php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-html ./coverage",
-    "analyze": "./vendor/bin/phpstan analyze"
+    "test": "vendor/bin/phpunit",
+    "coverage": "php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage",
+    "analyze": "vendor/bin/phpstan analyze"
   },
   "config": {
     "allow-plugins": {
