@@ -73,7 +73,7 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 * include output_current_blog right after activation
 
 = 1.1 =
-* fix backwards compatibility2.2.6
+* fix backwards compatibility
 
 = 1.0 =
 * tagged as stable
