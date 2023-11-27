@@ -3,10 +3,10 @@
 Contributors: realloc
 Donate link: http://www.greenpeace.org/international/
 Tags: multilingual, multisite, language, switcher, international, localization, i18n, menu, select-box, html select
-Requires at least: 3.6.1
-Tested up to: 6.3
-Requires PHP: 7.1
-Stable tag: 2.2.7
+Requires at least: 5.6
+Tested up to: 6.4
+Requires PHP: 7.4
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,11 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 * Activate the plugin and see the magic ;)
 
 == Changelog ==
+
+= 2.3.0 =
+* Tested WordPress 6.4
+* Set PHP 7.4 as a minimum requirement
+* Set WordPress 5.6 as a minimum requirement
 
 = 2.2.7 =
 * WordPress 6.3 tested
@@ -68,7 +73,7 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 * include output_current_blog right after activation
 
 = 1.1 =
-* fix backwards compatibility
+* fix backwards compatibility2.2.6
 
 = 1.0 =
 * tagged as stable
