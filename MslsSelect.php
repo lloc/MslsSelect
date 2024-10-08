@@ -1,31 +1,33 @@
 <?php
-
-/*
-Plugin Name: MslsSelect
-Requires Plugins: multisite-language-switcher
-Plugin URI: https://github.com/lloc/MslsSelect
-Description: Transforms the output of the Multisite Language Switcher to an HTML select
-Version: 2.3.1
-Author: Dennis Ploetner
-Author URI: http://lloc.de/
-*/
-
-/*
-Copyright 2014  Dennis Ploetner  (email : re@lloc.de)
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License, version 2, as
-published by the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+/**
+ * MslsSelect
+ *
+ * @copyright Copyright (C) 2011-2024, Dennis Ploetner, re@lloc.de
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 or later
+ * @wordpress-plugin
+ *
+ * Plugin Name: MslsSelect
+ * Requires Plugins: multisite-language-switcher
+ * Version: 2.3.2
+ * Plugin URI: https://wordpress.org/plugins/mslsselect/
+ * Description: Transforms the output of the Multisite Language Switcher to an HTML select
+ * Author: Dennis Ploetner
+ * Author URI: http://lloc.de/
+ * License: GPLv2 or later
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
 
 declare( strict_types=1 );
 
@@ -36,7 +38,7 @@ declare( strict_types=1 );
  */
 class MslsSelect {
 
-	const VERSION = '2.3.1';
+	const VERSION = '2.3.2';
 
 	public function __construct() {
 		$options = get_option( 'msls' );
