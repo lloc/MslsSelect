@@ -23,7 +23,11 @@
   "scripts": {
     "test": "vendor/bin/phpunit",
     "coverage": "php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage",
-    "analyze": "vendor/bin/phpstan analyze"
+    "analyze": "vendor/bin/phpstan analyze",
+    "git-release": "bin/git-release.sh",
+    "build": [
+      "@git-release"
+    ]
   },
   "config": {
     "allow-plugins": {
