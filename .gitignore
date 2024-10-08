@@ -4,3 +4,5 @@ phpunit.xml.bak
 .idea/
 vendor/
 coverage/
+mslsselect/
+mslsselect.zip
