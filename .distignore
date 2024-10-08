@@ -1,7 +1,9 @@
 /.wordpress-org
 /.git
 /.github
+/.idea
 /bin
+/mslsselect
 /reports
 /tests
 .distignore
@@ -11,6 +13,7 @@
 Changelog.md
 composer.json
 composer.lock
+mslsselect.zip
 package.json
 package-lock.json
 phpdoc.xml
