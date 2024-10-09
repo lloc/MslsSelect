@@ -6,7 +6,7 @@ Tags: multilingual, multisite, language, switcher, select
 Requires at least: 5.6
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 2.3.3
+Stable tag: 2.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,19 +26,13 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 
 == Changelog ==
 
-= 2.3.3 =
+= 2.3.4 =
 * Cleaner builds
 
-= 2.3.2 =
+= 2.3.0 =
 * Plugin check action added
 * Resulting errors addressed
-
-= 2.3.1 =
-* WordPress 6.5 tested
 * "Requires Plugins" added
-
-= 2.3.0 =
-* Tested WordPress 6.4
 * Set PHP 7.4 as a minimum requirement
 * Set WordPress 5.6 as a minimum requirement
 
