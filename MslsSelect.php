@@ -5,6 +5,7 @@
  * @copyright Copyright (C) 2011-2024, Dennis Ploetner, re@lloc.de
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 or later
  * @wordpress-plugin
+ * @package mslsselect
  *
  * Plugin Name: MslsSelect
  * Requires Plugins: multisite-language-switcher
@@ -60,12 +61,12 @@ class MslsSelect {
 	 */
 	public static function init(): self {
 		if ( ! is_admin() ) {
-			add_action( 'wp_enqueue_scripts', [ __CLASS__, 'enqueue_scripts' ] );
-			add_filter( 'msls_output_get_tags', [ __CLASS__, 'get_tags' ] );
-			add_filter( 'msls_output_get', [ __CLASS__, 'output_get' ], 10, 3 );
+			add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
+			add_filter( 'msls_output_get_tags', array( __CLASS__, 'get_tags' ) );
+			add_filter( 'msls_output_get', array( __CLASS__, 'output_get' ), 10, 3 );
 		}
 
-		return new self;
+		return new self();
 	}
 
 	/**
@@ -91,7 +92,7 @@ class MslsSelect {
 	 *
 	 * @param string $url
 	 * @param object $link
-	 * @param bool $current
+	 * @param bool   $current
 	 *
 	 * @return string
 	 */
@@ -105,20 +106,22 @@ class MslsSelect {
 	 * @return array<string, string>
 	 */
 	public static function get_tags(): array {
-		return [
+		return array(
 			'before_item'   => '',
 			'after_item'    => '',
 			'before_output' => '<select class="msls_languages">',
 			'after_output'  => '</select>',
-		];
+		);
 	}
-
 }
 
 // @codeCoverageIgnoreStart
 if ( function_exists( 'add_action' ) ) {
-	add_action( 'plugins_loaded', function () {
-		MslsSelect::init();
-	} );
+	add_action(
+		'plugins_loaded',
+		function () {
+			MslsSelect::init();
+		}
+	);
 }
 // @codeCoverageIgnoreEnd
