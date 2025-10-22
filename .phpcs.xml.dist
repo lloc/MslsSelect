@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="CS">
-    <description>PHPCS MslsMenu configuration</description>
+    <description>PHPCS MslsSelect configuration</description>
     <config name="testVersion" value="7.4-"/>
     <exclude-pattern>bin/*</exclude-pattern>
     <exclude-pattern>tests/*</exclude-pattern>
