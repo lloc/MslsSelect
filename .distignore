@@ -16,7 +16,7 @@
 /tests
 Changelog.md
 README.md
-composer.json
+AGENTS.md
 composer.lock
 mslsselect.zip
 package-lock.json
