@@ -19,7 +19,8 @@
     "phpstan/phpstan": "^1.8",
     "phpunit/phpunit": "~9.6",
     "szepeviktor/phpstan-wordpress": "^1.1",
-    "wp-coding-standards/wpcs": "^3.0"
+    "wp-coding-standards/wpcs": "^3.0",
+    "lloc/composer-i18n-scripts": "^1.0"
   },
   "scripts": {
     "test": "vendor/bin/phpunit",
@@ -45,7 +46,8 @@
     "allow-plugins": {
       "composer/installers": true,
       "phpstan/extension-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "lloc/composer-i18n-scripts": true
     }
   }
 }
