@@ -35,8 +35,9 @@
     "phpunit:html": "php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage",
     "git-release": "bin/git-release.sh",
     "build": [
-      "@composer update --no-dev",
-      "@git-release"
+      "@composer install --no-dev --prefer-dist --optimize-autoloader",
+      "@git-release",
+      "@composer update --prefer-dist --optimize-autoloader"
     ],
     "githooks": [
       "if [ -e bin/githooks/pre-commit ]; then cp bin/githooks/pre-commit ./.git/hooks/; fi",
