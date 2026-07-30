@@ -6,7 +6,7 @@ Tags: multilingual, multisite, language, switcher, select
 Requires at least: 5.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.3.4
+Stable tag: 2.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 * Activate the plugin and see the magic ;)
 
 == Changelog ==
+
+= 2.3.5 =
+* Fix PCP issues
 
 = 2.3.4 =
 * Cleaner builds

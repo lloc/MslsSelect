@@ -9,7 +9,7 @@
  *
  * Plugin Name: MslsSelect
  * Requires Plugins: multisite-language-switcher
- * Version: 2.3.4
+ * Version: 2.3.5
  * Plugin URI: https://wordpress.org/plugins/mslsselect/
  * Description: Transforms the output of the Multisite Language Switcher to an HTML select
  * Author: Dennis Ploetner
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class MslsSelect {
 
-	const VERSION = '2.3.4';
+	const VERSION = '2.3.5';
 
 	public function __construct() {
 		$options = get_option( 'msls' );
