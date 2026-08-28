@@ -1,12 +1,12 @@
-﻿=== MslsSelect ===
+=== MslsSelect ===
 
 Contributors: realloc
 Donate link: http://www.greenpeace.org/international/
 Tags: multilingual, multisite, language, switcher, select
-Requires at least: 5.6
-Tested up to: 7.0
+Requires at least: 6.1
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.3.5
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,13 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 * Activate the plugin and see the magic ;)
 
 == Changelog ==
+
+= 3.0.0 =
+* Changed: version aligned with Multisite Language Switcher 3.0 - MslsSelect is tested against MSLS 3.0 and keeps working with MSLS 2.x, because the two hooks it uses are unchanged.
+* Changed: requires WordPress 6.1 or newer, tested up to 7.1.
+* Fixed: the setting "Display link to the current language" is no longer overwritten in the database. MslsSelect forces the value while the option is read, so your own MSLS setting stays as you saved it and the frontend no longer writes to the database on every request.
+* Fixed: the link URL and the language description are escaped in the generated option elements.
+* Internal: the release is deployed from the built distribution, the same artifact Plugin Check verifies. Static analysis runs against the real MSLS classes instead of test stubs, and coding standards plus static analysis are now gated in CI.
 
 = 2.3.5 =
 * Fix PCP issues
@@ -90,3 +97,8 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 
 = 0.1 =
 * first version
+
+== Upgrade Notice ==
+
+= 3.0.0 =
+Version alignment with Multisite Language Switcher 3.0. Requires WordPress 6.1 or newer. MslsSelect no longer overwrites your "Display link to the current language" setting.

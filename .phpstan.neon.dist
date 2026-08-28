@@ -2,3 +2,7 @@ parameters:
     level: 6
     paths:
         - MslsSelect.php
+    scanDirectories:
+        - vendor/lloc/multisite-language-switcher/includes
+    bootstrapFiles:
+        - tests/phpstan-bootstrap.php
