@@ -27,11 +27,11 @@ But if you look for an **easy way** to change the output of the _Multisite Langu
 == Changelog ==
 
 = 3.0.0 =
-* Changed: version aligned with Multisite Language Switcher 3.0 - MslsSelect is tested against MSLS 3.0 and keeps working with MSLS 2.x, because the two hooks it uses are unchanged.
-* Changed: requires WordPress 6.1 or newer, tested up to 7.1.
-* Fixed: the setting "Display link to the current language" is no longer overwritten in the database. MslsSelect forces the value while the option is read, so your own MSLS setting stays as you saved it and the frontend no longer writes to the database on every request.
+* Changed: version aligned with Multisite Language Switcher 3.0
+* Fixed: the setting "Display link to the current language" is no longer overwritten in the database.
 * Fixed: the link URL and the language description are escaped in the generated option elements.
-* Internal: the release is deployed from the built distribution, the same artifact Plugin Check verifies. Static analysis runs against the real MSLS classes instead of test stubs, and coding standards plus static analysis are now gated in CI.
+* Internal: the release is deployed from the built distribution, the same artifact Plugin Check verifies.
+* Static analysis runs against the real MSLS classes instead of test stubs, and coding standards plus static analysis are now gated in CI.
 
 = 2.3.5 =
 * Fix PCP issues
