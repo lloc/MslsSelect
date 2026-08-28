@@ -18,13 +18,9 @@ jobs:
         run: composer run-script phpstan
   unit-tests:
     runs-on: ubuntu-latest
-    # The plugin itself still runs on PHP 7.4 - PHPCompatibilityWP verifies that
-    # statically via testVersion 7.4- and does not need an interpreter to do it. The
-    # matrix starts at 8.0 because the dev tree cannot be installed below that: MSLS 3.0
-    # depends on php-di ^7, which requires PHP 8.0.
     strategy:
       matrix:
-        php: ['8.0', '8.1', '8.2', '8.3', '8.4']
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
     name: PHPUnit on PHP ${{ matrix.php }}
     steps:
       - name: Checkout project
@@ -34,8 +30,14 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: none
+      # MSLS is a dev dependency for PHPStan only - the unit tests use Brain Monkey and
+      # never touch an MSLS class. Dropping it here lets the matrix cover the PHP 7.4 floor
+      # the plugin declares, independent of MSLS's own dependency choices: MSLS 3.0.0-3.0.2
+      # pull php-di ^7, which requires PHP 8.0. (MSLS 3.0.3 returns to php-di ^6.4.)
       - name: Composer dependencies
-        run: composer update --no-interaction
+        run: |
+          composer remove --dev --no-update --no-interaction lloc/multisite-language-switcher
+          composer update --no-interaction
       - name: Run Testsuite
         run: vendor/bin/phpunit
   code-coverages:

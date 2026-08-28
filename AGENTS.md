@@ -16,8 +16,11 @@
 - `composer githooks` copies the pre-commit hook into `.git/hooks/`.
 - `composer build` invokes `bin/git-release.sh` and refreshes the distributable.
 
-The dev tree requires PHP 8.0+ because Multisite Language Switcher 3.0 depends on `php-di ^7`.
-The plugin itself still targets PHP 7.4, which `PHPCompatibilityWP` verifies statically.
+The plugin targets PHP 7.4. CI runs the suite on 7.4 through 8.4 and drops the MSLS dev
+dependency in that matrix, since only PHPStan needs the real plugin. Keep it that way: it makes
+the matrix independent of MSLS's dependency choices. MSLS 3.0.0-3.0.2 depend on `php-di ^7`
+(PHP 8.0+), while MSLS 3.0.3 returns to `php-di ^6.4`, so the full dev tree installs on 7.4 again
+from that release on.
 
 ## Coding Style & Naming Conventions
 - Follow WordPress PHP style: tabs for indentation, PascalCase classes.

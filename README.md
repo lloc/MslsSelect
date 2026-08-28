@@ -38,8 +38,11 @@ an older MSLS is not disabled.
   pulled in as a dev dependency and bootstrapped in `tests/phpstan-bootstrap.php`. Never point it
   at test doubles — a stub reports whatever it was written to report and hides renames in the
   MSLS API instead of catching them.
-- The dev tree needs PHP 8.0+ because MSLS 3.0 depends on `php-di ^7`. The plugin itself still
-  runs on PHP 7.4; `PHPCompatibilityWP` with `testVersion 7.4-` verifies that statically.
+- The plugin targets PHP 7.4 and CI runs the test suite on 7.4 through 8.4. The matrix drops the
+  MSLS dev dependency, because the unit tests never touch an MSLS class — only PHPStan does. That
+  matters while MSLS 3.0.0–3.0.2 depend on `php-di ^7`, which requires PHP 8.0; MSLS 3.0.3 returns
+  to `php-di ^6.4`, after which the full dev tree installs on 7.4 as well.
+- `PHPCompatibilityWP` with `testVersion 7.4-` checks the 7.4 floor statically on top of that.
 
 ## Troubleshooting
 - If you still see a list instead of a dropdown, confirm the Multisite Language Switcher plugin is active and outputting links on that template.
